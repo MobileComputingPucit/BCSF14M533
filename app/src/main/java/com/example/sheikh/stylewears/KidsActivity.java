@@ -9,29 +9,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class GentsActivity extends AppCompatActivity {
-
-
+public class KidsActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
     String dbstring = "";
 
-    int[] PRODUCT_IMAGES={R.drawable.kurtamen, R.drawable.charcoaljacketmen, R.drawable.formalshirtmen, R.drawable.casualmenshirt};
-    String[] PRODUCT_NAME = {"Embroided Yellow Kurta","Charcoal Mock Jacket","Purple Formal Shirt","Navy Casual Shirt"};
+    int[] PRODUCT_IMAGES={R.drawable.coatkids, R.drawable.purplekidcoat, R.drawable.girlpartykid, R.drawable.pantshirtkids};
+    String[] PRODUCT_NAME = {"Cute Kids Coat","Blue Fancy Shirt","Fun party Kids Wear","Pant Shirt Kids"};
     String[] PRODUCT_DETAILS = {"Show Details", "Show Details","Show Details", "Show Details"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gents);
+        setContentView(R.layout.activity_kids);
 
-        ListView mylistView = (ListView) findViewById(R.id.products_list);
+        ListView mylistView = (ListView) findViewById(R.id.products_list_kids);
 
         SecondCustomAdapter secondCustomAdapter = new SecondCustomAdapter();
         mylistView.setAdapter(secondCustomAdapter);
@@ -49,14 +45,14 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='1'";
+                    String query = "SELECT * FROM Kids_Wears WHERE ID_KIDS='1'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
                         do{
-                             name = c.getString(1);
-                             old = c.getString(2);
-                             newprice = c.getString(3);
+                            name = c.getString(1);
+                            old = c.getString(2);
+                            newprice = c.getString(3);
 
                         }while(c.moveToNext());
 
@@ -66,7 +62,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(KidsActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -83,7 +79,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='2'";
+                    String query = "SELECT * FROM Kids_Wears WHERE ID_KIDS='2'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -100,7 +96,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(KidsActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -116,7 +112,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='3'";
+                    String query = "SELECT * FROM Kids_Wears WHERE ID_KIDS='3'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -133,7 +129,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(KidsActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -149,7 +145,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='4'";
+                    String query = "SELECT * FROM Kids_Wears WHERE ID_KIDS='4'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -166,7 +162,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(KidsActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -174,12 +170,12 @@ public class GentsActivity extends AppCompatActivity {
 
                 }
 
-             }
+            }
         });
 
     }
 
-     class SecondCustomAdapter extends BaseAdapter{
+    class SecondCustomAdapter extends BaseAdapter {
         @Override
         public int getCount() {
 

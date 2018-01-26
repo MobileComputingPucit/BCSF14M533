@@ -6,15 +6,38 @@
     android:layout_height="match_parent"
     tools:context="com.example.sheikh.stylewears.KurtaMen">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/image"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:id="@+id/tvChangeKurta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
         android:text="TextView"
         android:textSize="20dp"
+        android:textColor="#FFF"
+        android:background="#b5000000"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="139dp" />
+
+    <Button
+        android:id="@+id/ThanksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvChangeKurta"
         android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/tvChangeKurta"
+        android:layout_marginBottom="112dp"
+        android:text="ORDER"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"/>
+
+
 </RelativeLayout>

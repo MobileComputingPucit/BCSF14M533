@@ -47,17 +47,17 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
                 else if (i == 1){
-                    Toast.makeText(HomeActivity.this,"Ladies stock", Toast.LENGTH_SHORT).show();
-
+                    Intent intent = new Intent(HomeActivity.this, LadiesActivity.class);
+                    startActivity(intent);
                 }
 
                 else if (i == 2){
-                    Toast.makeText(HomeActivity.this,"Kids stock", Toast.LENGTH_SHORT).show();
-
+                    Intent intent = new Intent(HomeActivity.this, KidsActivity.class);
+                    startActivity(intent);
                 }
 
                 else if (i == 3){
-                    Toast.makeText(HomeActivity.this,"Bags stock", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this,"We are Updating It. Sorry!", Toast.LENGTH_LONG).show();
 
                 }
             }

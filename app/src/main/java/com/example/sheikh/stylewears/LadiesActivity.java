@@ -15,23 +15,23 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class GentsActivity extends AppCompatActivity {
+public class LadiesActivity extends AppCompatActivity {
 
 
 
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
     String dbstring = "";
 
-    int[] PRODUCT_IMAGES={R.drawable.kurtamen, R.drawable.charcoaljacketmen, R.drawable.formalshirtmen, R.drawable.casualmenshirt};
-    String[] PRODUCT_NAME = {"Embroided Yellow Kurta","Charcoal Mock Jacket","Purple Formal Shirt","Navy Casual Shirt"};
+    int[] PRODUCT_IMAGES={R.drawable.lehengaladies, R.drawable.skirtladies, R.drawable.summerlawnladies, R.drawable.bridalladies};
+    String[] PRODUCT_NAME = {"Lehenga","Skirts","Lawn suites","Bridal Wears"};
     String[] PRODUCT_DETAILS = {"Show Details", "Show Details","Show Details", "Show Details"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gents);
+        setContentView(R.layout.activity_ladies);
 
-        ListView mylistView = (ListView) findViewById(R.id.products_list);
+        ListView mylistView = (ListView) findViewById(R.id.products_list_ladies);
 
         SecondCustomAdapter secondCustomAdapter = new SecondCustomAdapter();
         mylistView.setAdapter(secondCustomAdapter);
@@ -49,14 +49,14 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='1'";
+                    String query = "SELECT * FROM Ladies_Wears WHERE ID_LADIES='1'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
                         do{
-                             name = c.getString(1);
-                             old = c.getString(2);
-                             newprice = c.getString(3);
+                            name = c.getString(1);
+                            old = c.getString(2);
+                            newprice = c.getString(3);
 
                         }while(c.moveToNext());
 
@@ -66,7 +66,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(LadiesActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -83,7 +83,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='2'";
+                    String query = "SELECT * FROM Ladies_Wears WHERE ID_LADIES='2'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -100,7 +100,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(LadiesActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -116,7 +116,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='3'";
+                    String query = "SELECT * FROM Ladies_Wears WHERE ID_LADIES='3'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -133,7 +133,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(LadiesActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -149,7 +149,7 @@ public class GentsActivity extends AppCompatActivity {
                     SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
 
 
-                    String query = "SELECT * FROM Men_Wears WHERE ID='4'";
+                    String query = "SELECT * FROM Ladies_Wears WHERE ID_LADIES='4'";
                     Cursor c = sqLiteDatabase.rawQuery(query, null);
 
                     if(c.moveToFirst()){
@@ -166,7 +166,7 @@ public class GentsActivity extends AppCompatActivity {
                     dbstring ="Product: " + name + "\n" + "Old Price: " + old + "\n" + "New Price: " + newprice;
 
 
-                    Intent intent = new Intent(GentsActivity.this, KurtaMen.class);
+                    Intent intent = new Intent(LadiesActivity.this, KurtaMen.class);
                     intent.putExtra("database_value",dbstring);
                     startActivity(intent);
 
@@ -174,12 +174,12 @@ public class GentsActivity extends AppCompatActivity {
 
                 }
 
-             }
+            }
         });
 
     }
 
-     class SecondCustomAdapter extends BaseAdapter{
+    class SecondCustomAdapter extends BaseAdapter{
         @Override
         public int getCount() {
 
