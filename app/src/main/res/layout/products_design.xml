@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/product_picture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:textSize="20dp"
+        android:text="TextView"
+        android:layout_marginBottom="27dp"
+        android:layout_above="@+id/button"
+        android:layout_toRightOf="@+id/product_picture"
+        android:layout_toEndOf="@+id/product_picture" />
+
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Details"
+        android:background="@drawable/button_rounded"
+        android:textColor="#FFF"
+        android:layout_marginBottom="28dp"
+        android:layout_alignBottom="@+id/product_picture"
+        android:layout_alignLeft="@+id/tvProductName"
+        android:layout_alignStart="@+id/tvProductName"/>
+</RelativeLayout>
